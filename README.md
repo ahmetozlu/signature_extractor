@@ -39,7 +39,6 @@ As already mentioned that the algorithm can extract the signatures from scanned 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/22610163/47317877-4733b200-d653-11e8-97d9-ba80248c24d0.png" | width=450>
 </p>
-taken from [here](https://slideplayer.com/slide/4593148/15/images/67/Extraction+of+connected+components.jpg).
 
 Thus, the connected components can be found and labelled by a cool functionality that is provided by scikit-image library! But why do we need it? Please just check the scanned documents, you can see that the biggest connect components are belongs the handwritten signatures! If we can get the biggest connected components, we can get the signatures from whole documents! However, we can also get the undesired lines or different shapes that have big connected components, right? So we also need a threshold value to get rid of them...
 
