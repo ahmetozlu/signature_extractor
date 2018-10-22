@@ -4,6 +4,9 @@ A design and implementation for "overlapped handwritten signature extraction fro
 
 ## 1.) Quick Demo 
 
+- Input = The scanned document
+- Output = The signatures exist on the input (scanned document)
+
 ### Sample result#1:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/22610163/47291471-73781000-d60c-11e8-9e5c-34699d91c73e.gif" | width=450>
