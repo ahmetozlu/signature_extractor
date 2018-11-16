@@ -51,7 +51,7 @@ A design and implementation of a super lightweight algorithm for "overlapped han
 As already mentioned that the algorithm can extract the signatures from scanned documents based on "connected component analysis" so what is connected component algorithm then?: In image processing, a connected components algorithm finds regions of connected pixels which have the same value!
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/22610163/47317877-4733b200-d653-11e8-97d9-ba80248c24d0.png" | width=450>
+  <img src="https://user-images.githubusercontent.com/22610163/48627013-850ec680-e9c4-11e8-9ef5-f692531dff1d.jpg">
 </p>
 
 You can find more detailed information about the connected component analysis in [here](https://homepages.inf.ed.ac.uk/rbf/HIPR2/label.htm).
