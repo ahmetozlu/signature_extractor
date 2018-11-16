@@ -43,7 +43,7 @@ A design and implementation of a super lightweight algorithm for "overlapped han
 ### Main pipe-line
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/22610163/47617314-f00c6200-dad6-11e8-8ebf-c45a391b378b.jpg" | width=750>
+  <img src="https://user-images.githubusercontent.com/22610163/47617314-f00c6200-dad6-11e8-8ebf-c45a391b378b.jpg">
 </p>
 
 ### Theoritical Background
