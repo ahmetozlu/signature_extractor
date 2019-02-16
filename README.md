@@ -13,7 +13,14 @@ A design and implementation of a super lightweight algorithm for "overlapped han
   <img src="https://user-images.githubusercontent.com/22610163/47317435-38003480-d652-11e8-87be-0d93ea9e119a.png" | width=750>
 </p>
 
+**TODOs:**
+
+- "Outliar Removal" module will be developed to improve the signature extraction algorithm.
+- CNN based "Signature Recognition" module will be developed.
+- "Signature Spoofing Detection" algorithm will be developed.
+
 ---
+
 
 ### Sample Test Results
 
