@@ -15,6 +15,7 @@ A design and implementation of a super lightweight algorithm for "overlapped han
 
 **TODOs:**
 
+- "Perspective Transformation" module will be developed.
 - "Outliar Removal" module will be developed to improve the signature extraction algorithm.
 - CNN based "Signature Recognition" module will be developed.
 - "Signature Spoofing Detection" algorithm will be developed.
