@@ -15,6 +15,9 @@ A design and implementation of a super lightweight algorithm for "overlapped han
 
 **TODOs:**
 
+- "Page dewarpper" module will be developed.
+- "Unsharp Masking" module will be developed.
+- "Color Correction" module will bedeveloped.
 - "Perspective Transformation" module will be developed.
 - "Outliar Removal" module will be developed to improve the signature extraction algorithm.
 - CNN based "Signature Recognition" module will be developed.
