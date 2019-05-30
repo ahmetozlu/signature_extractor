@@ -3,10 +3,11 @@ import cv2
 contrast = 0
 brightness = 0
 
-def funcBrightContrast(img, output_img, bright=0):
+def funcBrightContrast(img, bright=0):
     effect = apply_brightness_contrast(img,bright,contrast)
     # save the final output image
-    cv2.imwrite("./outputs/" + output_img, effect)
+    #cv2.imwrite("./outputs/" + output_img, effect)
+    return effect
 
 # function for performing the color correction
 def apply_brightness_contrast(input_img, brightness = 255, contrast = 127):

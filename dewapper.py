@@ -38,7 +38,7 @@ def dewarp_book(image):
 
 	# perform dilate morphological filter to connect teh image pixel points
 	kernel = np.ones((5,5),np.uint8)
-	edged = cv2.dilate(edged,kernel,iterations = 10)
+	edged = cv2.dilate(edged,kernel,iterations = 1)
 
 	# find contours
 	cnts = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
