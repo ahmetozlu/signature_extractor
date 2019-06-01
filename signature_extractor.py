@@ -68,4 +68,5 @@ def extract_signature(source_image):
 	# ensure binary
 	img = cv2.threshold(img, 0, 255,cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
 	# save the the result
-	cv2.imwrite("./outputs/output.png", img)
+	#cv2.imwrite("output.png", img)
+	return img
