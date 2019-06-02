@@ -55,7 +55,7 @@ def extract_signature(source_image):
 
 	# experimental-based ratio calculation, modify it for your cases 
 	# a4_constant is used as a threshold value to remove connected pixels are smaller than a4_constant for A4 size scanned documents
-	a4_constant = ((average/84.0)*250.0)+100
+	a4_constant = (((average/84.0)*250.0)+100)*1.5
 	print ("a4_constant: " + str(a4_constant))
 
 	# remove the connected pixels are smaller than a4_constant

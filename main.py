@@ -12,7 +12,7 @@ import unsharpen
 import color_correlation
 import signature_extractor
 
-source_image = cv2.imread("test1.jpg")
+source_image = cv2.imread("test.jpg")
 img = 0
 try:	
 	# read the source input image and call the dewarp_book function to perform cropping with the margin and book dewarping
@@ -46,3 +46,5 @@ try:
 except Exception as e:
 	print("type error: " + str(e))
 	print("ERROR IN BOOK COLOR CORRELATION! PLEASE CHECK LIGTHNING, SHADOW, ZOOM LEVEL AND ETC. OF YOUR INPUT BOOK IMAGE!")
+
+cv2.imwrite("output.jpg", img)
