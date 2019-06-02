@@ -12,7 +12,7 @@ import unsharpen
 import color_correlation
 import signature_extractor
 
-source_image = cv2.imread("test.jpg")
+source_image = cv2.imread("test1.jpg")
 img = 0
 try:	
 	# read the source input image and call the dewarp_book function to perform cropping with the margin and book dewarping
