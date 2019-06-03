@@ -1,13 +1,13 @@
-# "Signature Extraction" based connected component analysis
+# A Real-life Application of Signature Extraction Algorithm
 
-A real-life sample project which built on top of "[signature_extraction](https://github.com/ahmetozlu/signature_extractor/blob/master/signature_extractor.py)" algorithm to extract the signatures on the digital photo of the document.
+A real-life sample project which built on top of "[signature_extraction](https://github.com/ahmetozlu/signature_extractor/blob/master/signature_extractor.py)" algorithm to extract the signatures on the digital photo of the document. This project project provides a basic document scanner and signature extractor!
 
 Here are the functionalities of this sample project:
 
-- [Page dewarping]()
-- [Signatre extraction]()
-- [Unsharpening mask]()
-- [Color correction]()
+- [Page dewarping - Perspective transformation](https://github.com/ahmetozlu/signature_extractor/blob/master/sample_project/dewapper.py)
+- [Signatre extraction](https://github.com/ahmetozlu/signature_extractor/blob/master/sample_project/signature_extractor.py)
+- [Unsharpening mask](https://github.com/ahmetozlu/signature_extractor/blob/master/sample_project/unsharpen.py)
+- [Color correction](https://github.com/ahmetozlu/signature_extractor/blob/master/sample_project/color_correlation.py)
 
 ## Quick Demo 
 
