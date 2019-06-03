@@ -1,39 +1,35 @@
 # "Signature Extraction" based connected component analysis
 
-A design and implementation of a super lightweight algorithm for "overlapped handwritten signature extraction from scanned documents" using OpenCV and scikit-image on python.
+A real-life sample project which built on top of "[signature_extraction](https://github.com/ahmetozlu/signature_extractor/blob/master/signature_extractor.py)" algorithm to extract the signatures on the digital photo of the document.
+
+Here are the functionalities of this sample project:
+
+- [Page dewarping]()
+- [Signatre extraction]()
+- [Unsharpening mask]()
+- [Color correction]()
 
 ## Quick Demo 
 
 ---
 
-- Input = The scanned document
+- Input = The digital photo of the document
 - Output = The signatures exist on the input
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/22610163/58767686-d9137e00-8597-11e9-9921-1bf8204ab451.jpg" | width=750>
 </p>
 
-**TODOs:**
-
-- "Page dewarpper" module will be developed.
-- "Unsharp Masking" module will be developed.
-- "Color Correction" module will bedeveloped.
-- "Perspective Transformation" module will be developed.
-- "Outliar Removal" module will be developed to improve the signature extraction algorithm.
-- CNN based "Signature Recognition" module will be developed.
-- "Signature Spoofing Detection" algorithm will be developed.
-
 ---
-
 
 ### Sample Test Results
 
 #### - Sample result#1:
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/22610163/58767618-cea4b480-8596-11e9-9723-a4a07cc3bf42.gif" | width=450>
+  <img src="https://user-images.githubusercontent.com/22610163/58769479-37e4f180-85b0-11e9-8822-c6521eb54781.gif" | width=450>
 </p>
 
-**Explanation:** For this case, the signature extraction algorithm can extract the 3 different handwritten signatures successfully. Just a very small portion of the signature, which is located at top-left, is lost because this part is not connected with the whole signature line so the algorithm interprets it is not a part of the signature.
+**Explanation:** Fristly, the page dewarping algorithm is performed to warp the page properly. And then, signature extraction algorithm is performed to extract the signature on the image. Lastly, unsharpening mask and color correction algortihms are performed to make the documents quality high!
 
 ## Theory
 
