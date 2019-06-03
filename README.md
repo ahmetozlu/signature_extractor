@@ -13,6 +13,18 @@ A design and implementation of a super lightweight algorithm for "overlapped han
   <img src="https://user-images.githubusercontent.com/22610163/47317435-38003480-d652-11e8-87be-0d93ea9e119a.png" | width=750>
 </p>
 
+You can find a [sample project](https://github.com/ahmetozlu/signature_extractor/tree/feature-doc_scanner_sign_extrator/sample_project) that is developed on top of "signature extractor" algorithm to extract the signatures on the digital photo of the document. Here are the functionalities of this sample project:
+
+- [Page dewarping](https://github.com/ahmetozlu/signature_extractor/blob/feature-doc_scanner_sign_extrator/sample_project/dewapper.py)
+- [Signatre extraction](https://github.com/ahmetozlu/signature_extractor/blob/feature-doc_scanner_sign_extrator/sample_project/signature_extractor.py)
+- [Unsharpening mask](https://github.com/ahmetozlu/signature_extractor/blob/feature-doc_scanner_sign_extrator/sample_project/unsharpen.py)
+- [Color correction](https://github.com/ahmetozlu/signature_extractor/blob/feature-doc_scanner_sign_extrator/sample_project/color_correlation.py)
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/22610163/58769479-37e4f180-85b0-11e9-8822-c6521eb54781.gif" | width=450>
+</p>
+
+
 **TODOs:**
 
 - "Page dewarpper" module will be developed.
