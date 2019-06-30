@@ -16,6 +16,8 @@ A design and implementation of a super lightweight algorithm for "overlapped han
 - "Outliar Removal" module will be developed to improve the signature extraction algorithm.
 - CNN based "Signature Recognition" module will be developed.
 - "Signature Spoofing Detection" algorithm will be developed.
+- "Signature Detector (bounding box) & Counter" module will be developed.
+- "Accuracy of detection on [SigSA: On-line Handwritten Signature Database](http://research.sabanciuniv.edu/13568/1/SigDB.pdf)" will be calculated and shared.
 
 ---
 
