@@ -12,7 +12,7 @@ from skimage.color import label2rgb
 from skimage.measure import regionprops
 
 # read the input image
-img = cv2.imread('./inputs/sample_scanned_document_#1.jpg', 0)
+img = cv2.imread('./inputs/in1.jpg', 0)
 img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)[1]  # ensure binary
 
 # connected component analysis by scikit-learn framework
@@ -58,7 +58,7 @@ print("a4_constant: " + str(a4_constant))
 b = morphology.remove_small_objects(blobs_labels, a4_constant)
 # save the the pre-version which is the image is labelled with colors
 # as considering connected components
-plt.imsave('pre_version.png', b)
+#plt.imsave('pre_version.png', b) # for debugging
 
 # read the pre-version
 img = cv2.imread('pre_version.png', 0)
