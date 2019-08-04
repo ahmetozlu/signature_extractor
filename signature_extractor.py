@@ -58,7 +58,7 @@ print("a4_constant: " + str(a4_constant))
 b = morphology.remove_small_objects(blobs_labels, a4_constant)
 # save the the pre-version which is the image is labelled with colors
 # as considering connected components
-#plt.imsave('pre_version.png', b) # for debugging
+plt.imsave('pre_version.png', b) # for debugging
 
 # read the pre-version
 img = cv2.imread('pre_version.png', 0)
