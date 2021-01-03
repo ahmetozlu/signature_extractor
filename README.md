@@ -1,6 +1,6 @@
 # "Signature Extraction" based connected component analysis
 
-A design and implementation of a super lightweight algorithm for "overlapped handwritten signature extraction from scanned documents" using OpenCV and scikit-image on python. ***Please contact if you need professional signature detection & recognition & segmentation & counting project with the super high accuracy.***
+A design and implementation of a super lightweight algorithm for "overlapped handwritten signature extraction from scanned documents" using OpenCV and scikit-image on python. ***Please contact if you need professional signature detection & recognition & segmentation & counting project with the super high accuracy!***
 
 ---
 
