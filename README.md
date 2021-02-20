@@ -13,7 +13,7 @@ A design and implementation of a super lightweight algorithm for "overlapped han
 
 **TODOs:**
 
-- "Outliar Removal" module will be developed to improve the signature extraction algorithm.
+- "Outliar Removal" module will be improved to boost the signature extraction algorithm.
 - CNN based "Signature Recognition" module will be developed.
 - "Signature Spoofing Detection" algorithm will be developed.
 - "Signature Detector (bounding box) & Counter" module will be developed.
@@ -81,16 +81,19 @@ Thus, the connected components can be found and labelled by a cool functionality
 
 I've calculated the threshold value to detect the outliars (any lines, shapes and texts are not a part of the signatures) via performing many experiments. I've got an equation ,are calculated based experiement results, which are works pretty good for most of the scanned documents are a4 sized.
 
-Here the code parts that start on [signature_extractor.py - line#56](https://github.com/ahmetozlu/signature_extractor/blob/master/signature_extractor.py#L56):
+**Detect and remove the small size outliars:**
 
-    # experimental-based ratio calculation, modify it for your cases 
-    # a4_constant is used as a threshold value to remove connected pixels are smaller than a4_constant for A4 size scanned documents
-    a4_constant = ((average/84.0)*250.0)+100
-    print ("a4_constant: " + str(a4_constant))
+Here the code parts that start on [signature_extractor.py - line#60](https://github.com/ahmetozlu/signature_extractor/blob/master/signature_extractor.py#L60):
+
+    # experimental-based ratio calculation, modify it for your cases
+    # a4_small_size_outliar_constant is used as a threshold value to remove connected outliar connected pixels
+    # are smaller than a4_small_size_outliar_constant for A4 size scanned documents
+    a4_small_size_outliar_constant = ((average/constant_parameter_1)*constant_parameter_2)+constant_parameter_3
+    print("a4_small_size_outliar_constant: " + str(a4_small_size_outliar_constant))
 
 I determined the equation (x stands for scanned document size such as A4 or A0):
 
-- ax_constant = ((average/*constant_parameter_1*) * *constant_parameter_2*) + *constant_parameter_3*
+- ax_small_size_outliar_constant = ((average/*constant_parameter_1*) * *constant_parameter_2*) + *constant_parameter_3*
 
 based full of my experiments. You can modify it for your cases and also the scanned document size such as for A0 and so on... Just configure the constants:
 
@@ -99,6 +102,27 @@ based full of my experiments. You can modify it for your cases and also the scan
   - *constant_parameter_3*
 
 perform many experiments with the different parameter values till get the highest accuracy!
+
+**Detect and remove the big size outliars:**
+
+Here the code parts that start on [signature_extractor.py - line#66](https://github.com/ahmetozlu/signature_extractor/blob/master/signature_extractor.py#L66):
+
+    # experimental-based ratio calculation, modify it for your cases
+    # a4_big_size_outliar_constant is used as a threshold value to remove outliar connected pixels
+    # are bigger than a4_big_size_outliar_constant for A4 size scanned documents
+    a4_big_size_outliar_constant = a4_small_size_outliar_constant*constant_parameter_4
+    print("a4_big_size_outliar_constant: " + str(a4_big_size_outliar_constant))
+
+I determined the equation (x stands for scanned document size such as A4 or A0):
+
+- ax_big_size_outliar_constant = ax_small_size_outliar_constant*constant_parameter_4
+
+based full of my experiments. You can modify it for your cases and also the scanned document size such as for A0 and so on... Just configure the constant:
+
+  - *constant_parameter_4*
+  
+perform many experiments with the different parameter values till get the highest accuracy!
+
 
 ## Installation
 
