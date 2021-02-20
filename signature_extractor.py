@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from skimage import measure, morphology
 from skimage.color import label2rgb
 from skimage.measure import regionprops
+import numpy as np
 
 # read the input image
 img = cv2.imread('./inputs/in1.jpg', 0)
@@ -51,11 +52,19 @@ print("average: " + str(average))
 # experimental-based ratio calculation, modify it for your cases
 # a4_constant is used as a threshold value to remove connected pixels
 # are smaller than a4_constant for A4 size scanned documents
+# and (a4_constant*18) is used as a threshold value to remove connected pixels
+# are bigger than (a4_constant*18) for A4 size scanned documents
 a4_constant = ((average/84.0)*250.0)+100
 print("a4_constant: " + str(a4_constant))
 
 # remove the connected pixels are smaller than a4_constant
 b = morphology.remove_small_objects(blobs_labels, a4_constant)
+# remove the connected pixels are bigger than threshold (a4_constant*18) 
+# to get rid of undesired connected pixels such as table headers and etc.
+component_sizes = np.bincount(b.ravel())
+too_small = component_sizes > (a4_constant*18)
+too_small_mask = too_small[b]
+b[too_small_mask] = 0
 # save the the pre-version which is the image is labelled with colors
 # as considering connected components
 plt.imsave('pre_version.png', b)
