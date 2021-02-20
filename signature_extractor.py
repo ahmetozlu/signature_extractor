@@ -12,12 +12,12 @@ from skimage.color import label2rgb
 from skimage.measure import regionprops
 import numpy as np
 
-# the parameters are used to remove smaller outliar connected pixels
+# the parameters are used to remove small size connected pixels outliar 
 constant_parameter_1 = 84
 constant_parameter_2 = 250
 constant_parameter_3 = 100
 
-# the parameter is used to remove bigger outliar connected pixels
+# the parameter is used to remove big size connected pixels outliar
 constant_parameter_4 = 18
 
 # read the input image
@@ -58,23 +58,23 @@ print("the_biggest_component: " + str(the_biggest_component))
 print("average: " + str(average))
 
 # experimental-based ratio calculation, modify it for your cases
-# a4_smaller_outliar_constant is used as a threshold value to remove connected outliar connected pixels
-# are smaller than a4_smaller_outliar_constant for A4 size scanned documents
-a4_smaller_outliar_constant = ((average/constant_parameter_1)*constant_parameter_2)+constant_parameter_3
-print("a4_smaller_outliar_constant: " + str(a4_smaller_outliar_constant))
+# a4_small_size_outliar_constant is used as a threshold value to remove connected outliar connected pixels
+# are smaller than a4_small_size_outliar_constant for A4 size scanned documents
+a4_small_size_outliar_constant = ((average/constant_parameter_1)*constant_parameter_2)+constant_parameter_3
+print("a4_small_size_outliar_constant: " + str(a4_small_size_outliar_constant))
 
 # experimental-based ratio calculation, modify it for your cases
-# a4_bigger_outliar_constant is used as a threshold value to remove outliar connected pixels
-# are bigger than a4_bigger_outliar_constant for A4 size scanned documents
-a4_bigger_outliar_constant = a4_smaller_outliar_constant*constant_parameter_4
-print("a4_bigger_outliar_constant: " + str(a4_bigger_outliar_constant))
+# a4_big_size_outliar_constant is used as a threshold value to remove outliar connected pixels
+# are bigger than a4_big_size_outliar_constant for A4 size scanned documents
+a4_big_size_outliar_constant = a4_small_size_outliar_constant*constant_parameter_4
+print("a4_big_size_outliar_constant: " + str(a4_big_size_outliar_constant))
 
-# remove the connected pixels are smaller than a4_smaller_outliar_constant
-pre_version = morphology.remove_small_objects(blobs_labels, a4_smaller_outliar_constant)
-# remove the connected pixels are bigger than threshold a4_bigger_outliar_constant 
+# remove the connected pixels are smaller than a4_small_size_outliar_constant
+pre_version = morphology.remove_small_objects(blobs_labels, a4_small_size_outliar_constant)
+# remove the connected pixels are bigger than threshold a4_big_size_outliar_constant 
 # to get rid of undesired connected pixels such as table headers and etc.
 component_sizes = np.bincount(pre_version.ravel())
-too_small = component_sizes > (a4_bigger_outliar_constant)
+too_small = component_sizes > (a4_big_size_outliar_constant)
 too_small_mask = too_small[pre_version]
 pre_version[too_small_mask] = 0
 # save the the pre-version which is the image is labelled with colors
