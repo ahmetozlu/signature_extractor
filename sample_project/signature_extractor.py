@@ -12,6 +12,14 @@ from skimage import measure, morphology
 from skimage.measure import regionprops
 import numpy as np
 
+# the parameters are used to remove smaller outliar connected pixels
+constant_parameter_1 = 84
+constant_parameter_2 = 250
+constant_parameter_3 = 100
+
+# the parameter is used to remove bigger outliar connected pixels
+constant_parameter_4 = 18
+
 def extract_signature(source_image):
     """Extract signature from an input image.
 
@@ -64,24 +72,28 @@ def extract_signature(source_image):
     print("average: " + str(average))
 
     # experimental-based ratio calculation, modify it for your cases
-    # a4_constant is used as a threshold value to remove connected pixels
-    # are smaller than a4_constant for A4 size scanned documents
-    # and (a4_constant*18) is used as a threshold value to remove connected pixels
-    # are bigger than (a4_constant*18) for A4 size scanned documents
-    a4_constant = (((average/84.0)*250.0)+100)*1.5
-    print("a4_constant: " + str(a4_constant))
+    # a4_smaller_outliar_constant is used as a threshold value to remove connected outliar connected pixels
+    # are smaller than a4_smaller_outliar_constant for A4 size scanned documents
+    a4_smaller_outliar_constant = ((average/constant_parameter_1)*constant_parameter_2)+constant_parameter_3
+    print("a4_smaller_outliar_constant: " + str(a4_smaller_outliar_constant))
 
-    # remove the connected pixels are smaller than a4_constant
-    b = morphology.remove_small_objects(blobs_labels, a4_constant)
-    # remove the connected pixels are bigger than threshold (a4_constant*18) 
+    # experimental-based ratio calculation, modify it for your cases
+    # a4_bigger_outliar_constant is used as a threshold value to remove outliar connected pixels
+    # are bigger than a4_bigger_outliar_constant for A4 size scanned documents
+    a4_bigger_outliar_constant = a4_smaller_outliar_constant*constant_parameter_4
+    print("a4_bigger_outliar_constant: " + str(a4_bigger_outliar_constant))
+
+    # remove the connected pixels are smaller than a4_smaller_outliar_constant
+    pre_version = morphology.remove_small_objects(blobs_labels, a4_smaller_outliar_constant)
+    # remove the connected pixels are bigger than threshold a4_bigger_outliar_constant 
     # to get rid of undesired connected pixels such as table headers and etc.
-    component_sizes = np.bincount(b.ravel())
-    too_small = component_sizes > (a4_constant*18)
-    too_small_mask = too_small[b]
-    b[too_small_mask] = 0
+    component_sizes = np.bincount(pre_version.ravel())
+    too_small = component_sizes > (a4_bigger_outliar_constant)
+    too_small_mask = too_small[pre_version]
+    pre_version[too_small_mask] = 0
     # save the the pre-version which is the image is labelled with colors
     # as considering connected components
-    plt.imsave('pre_version.png', b)
+    plt.imsave('pre_version.png', pre_version)
 
     # read the pre-version
     img = cv2.imread('pre_version.png', 0)
