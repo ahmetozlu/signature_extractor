@@ -8,7 +8,6 @@
 import cv2
 import matplotlib.pyplot as plt
 from skimage import measure, morphology
-# from skimage.color import label2rgb
 from skimage.measure import regionprops
 import numpy as np
 
