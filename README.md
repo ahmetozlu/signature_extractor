@@ -48,7 +48,7 @@ You can find a [sample project](https://github.com/ahmetozlu/signature_extractor
   <img src="https://user-images.githubusercontent.com/22610163/47291680-36604d80-d60d-11e8-9a27-6870c6724b0e.gif" | width=450>
 </p>
 
-**Explanation:** For this case, signature extraction algorithm can extract 2 handwriteetn signatures from the whole textual data but it can not remove the lines, that are located at bottom-center, because the signature has big connected pixels so the algorithm sees them as signatures.
+**Explanation:** For this case, signature extraction algorithm can extract 2 handwritten signatures from the whole textual data but it can not remove the lines, that are located at bottom-center, because the signature has big connected pixels so the algorithm sees them as signatures.
 
 #### - Sample result#3:
 <p align="center">
